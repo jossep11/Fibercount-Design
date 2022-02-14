@@ -1,15 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Secular One", sans-serif;
 }
 body {
   display: flex;
   min-height: 100vh;
   background: #0a0a23;
   color: #fff;
+}
+p {
+  margin: 0;
 }
 .drag-area {
   background-color: #1f1f42;
@@ -27,6 +29,20 @@ body {
   font-size: 40px;
   color: #fff;
 }
+.icon {
+  font-size: 40px;
+  color: #fff;
+}
+.pick-file {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 .drag-area header {
   font-size: 20px;
   font-weight: 500;
@@ -60,12 +76,58 @@ body {
   height: 20vh;
 }
 .main-box-size {
-  height: 40vh;
+  min-height: calc(60vh - 4rem);
+  transition: all 0.5s ease;
+}
+.main-box-size-2 {
+  height: calc(40vh - 1.5rem);
+  overflow: auto;
+  transition: all 0.5s ease;
 }
 
 .user-size {
-  height: 20vh;
+  min-height: calc(20vh - 4rem);
 }
 .drag-size {
-  height: 60vh;
+  /* height: 70vh; */
+  min-height: calc(80vh - 1.5rem);
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 767px) {
+  .grafica_mq {
+    margin-top: 2rem;
+  }
+  .drag-size {
+    min-height: 15rem;
+  }
+  .main-box-size {
+    min-height: auto;
+  }
+  .main-box-size-2 {
+    height: calc(70vh - 1.5rem);
+    overflow: auto;
+  }
+}
+.files-to-pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  flex-shrink: 1;
+}
+
+.testx {
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type="text"],
+select {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 4px 4px;
+}
+
+.Search {
+  gap: 10px;
 }
